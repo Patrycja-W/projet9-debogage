@@ -8,8 +8,8 @@ import "./style.scss";
 const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
-  const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) < new Date(evtB.date) ? -1 : 0
+  const byDateDesc = data?.focus.sort(
+    (evtA, evtB) => (new Date(evtA.date) < new Date(evtB.date) ? -1 : 0) //changement de 1 a 0
   );
 
   // Trie le tableau focus contenu dans l'objet data par date dans l'ordre décroissant. Du plus ancien au plus récent.
@@ -17,9 +17,9 @@ const Slider = () => {
   // -1 indique que si l'evenetment A est plus ancien que B, il doit etre placé avant le B (evenement le plus récent)
 
   const nextCard = () => {
-    setIndex((prevIndex) =>
-      prevIndex < byDateDesc.length - 1 ? prevIndex + 1 : 0
-    );
+    setIndex((prevIndex) => {
+      return prevIndex < byDateDesc.length - 1 ? prevIndex + 1 : 0;
+    });
 
     // NextCard : utilise la fonction setIndex pour mettre à jour l'index.
     // L'index est incrémenté de 1 s'il est inférieur à la longueur du tableau trié,

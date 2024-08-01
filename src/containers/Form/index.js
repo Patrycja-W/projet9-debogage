@@ -19,7 +19,7 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
-        onSuccess(); // Add onSuccess is called if mockContactApi succeed
+        onSuccess(); // Ajout onSuccess
       } catch (err) {
         setSending(false);
         onError(err);
@@ -35,7 +35,7 @@ const Form = ({ onSuccess, onError }) => {
           <Field placeholder="" label="Prénom" />
           <Select
             selection={["Personel", "Entreprise"]}
-            // onChange={() => null} suppression de la ligne onChange
+            onChange={() => null}
             label="Personel / Entreprise"
             type="large"
             titleEmpty
