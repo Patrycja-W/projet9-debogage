@@ -18,7 +18,7 @@ const Slider = () => {
 
   const nextCard = () => {
     setIndex((prevIndex) => {
-      return prevIndex < byDateDesc.length - 1 ? prevIndex + 1 : 0;
+      return prevIndex < byDateDesc.length - 1 ? prevIndex + 1 : 0;     // Définir la longueur du Slider pour qu'il corresponde à celle des données du tableau data.focus [0, 1, 2], soit 3 entrées. Ceci corrige le bug de la slide blanche en trop.
     });
 
     // NextCard : utilise la fonction setIndex pour mettre à jour l'index.
